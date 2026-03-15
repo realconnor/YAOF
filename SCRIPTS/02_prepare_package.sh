@@ -249,9 +249,9 @@ CONFIG_CPU_IDLE_GOV_TEO=y
 find ./target/linux/ -name "config-${KERNEL_VERSION}" | xargs -I{} sh -c "echo '$CONFIG_CONTENT' | tee -a {} > /dev/null"
 
 ### 最后的收尾工作 ###
-# Lets Fuck
+# Lets do reset
 mkdir -p package/base-files/files/usr/bin
-cp -rf ../OpenWrt-Add/fuck ./package/base-files/files/usr/bin/fuck
+cp -rf ../OpenWrt-Add/fuck ./package/base-files/files/usr/bin/do_reset
 # 生成默认配置及缓存
 rm -rf .config
 sed -i 's,CONFIG_WERROR=y,# CONFIG_WERROR is not set,g' target/linux/generic/config-${KERNEL_VERSION}
